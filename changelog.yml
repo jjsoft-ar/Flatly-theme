@@ -1,5 +1,8 @@
 url: https://github.com/AsgardCms/Flatly-theme
 versions:
+    "2.0@unreleased":
+        added:
+            - Manual notifications partial, to remove laracasts/flash
     "1.2.0":
         changed:
             - New master account layout for updated AdminLTE theme
