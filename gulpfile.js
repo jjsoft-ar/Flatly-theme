@@ -3,14 +3,12 @@ var shell = require('gulp-shell');
 var elixir = require('laravel-elixir');
 var themeInfo = require('./theme.json');
 
-elixir.extend("stylistPublish", function() {
-    gulp.task("stylistPublish", function() {
-        gulp.src("").pipe(shell("php ../../artisan stylist:publish "+themeInfo.name));
+var Task = elixir.Task;
+
+elixir.extend('stylistPublish', function() {
+    new Task('stylistPublish', function() {
+        return gulp.src("").pipe(shell("php ../../artisan stylist:publish " + themeInfo.name));
     });
-
-    this.registerWatcher("stylistPublish", "**/*.less");
-
-    return this.queueTask("stylistPublish");
 });
 /*
  |--------------------------------------------------------------------------
@@ -30,7 +28,7 @@ elixir(function (mix) {
      */
     mix.less([
         "main.less"
-    ])
+    ], 'assets/css/main.css')
     .stylistPublish();
 
     /**
