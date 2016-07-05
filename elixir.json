@@ -1,6 +1,7 @@
 {
   "srcDir": "Themes/Flatly",
-  "assetsDir": "resources/",
+  "assetsPath": "resources/",
+  "publicPath": "assets/",
   "cssOutput": "assets/css/",
   "jsOutput": "assets/js/",
   "bowerDir": "resources/vendor/"
